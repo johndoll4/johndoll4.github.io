@@ -33,40 +33,62 @@ $(function () {
     /////////////////////////////////////////////////
     //////////ONLY CHANGE BELOW THIS POINT///////////
     /////////////////////////////////////////////////
-    createPlatform(700,700,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(300,500,100,10);
-    createPlatform(700,550,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(400,600,100,10);
-    createPlatform(400,600,100,10);
+    
     // TODO 1
     // Create platforms
     // You must decide the x position, y position, width, and height of the platforms
     // example usage: createPlatform(x,y,width,height)
+    createPlatform(700,700,100,10);
+    createPlatform(400,600,100,10);
+    createPlatform(300,500,100,10);
+    createPlatform(700,550,100,10);
+    createPlatform(1000,600,100,10);
+    createPlatform(50,600,100,10);
+    createPlatform(400,600,100,10);
+    createPlatform(400,600,100,10);
+    createPlatform(400,600,100,10);
+    createPlatform(400,600,100,10);
+    createPlatform(400,600,100,10);
 
 
-
-    createCollectable(100,100,1,10);
+    
     // TODO 2
     // Create collectables
     // You must decide on the collectable type, the x position, the y position, the gravity, and the bounce strength
     // Your collectable choices are 'database' 'diamond' 'grace' 'kennedi' 'max' and 'steve'; more can be added if you wish
     // example usage: createCollectable(type, x, y, gravity, bounce)
+    createCollectable("database",100,100,0,0);
 
 
-
-    createCannon("right" , 700 , 1000);
+    
     // TODO 3
     // Create cannons
     // You must decide the wall you want the cannon on, the position on the wall, and the time between shots in milliseconds
     // Your wall choices are: 'top' 'left' 'right' and 'bottom'
     // example usage: createCannon(side, position, delay, width, height)
-
+    createCannon("right", 700,0.001);
+    createCannon("right", 710,0.001);
+    createCannon("right", 720,0.001);
+    createCannon("right", 730,0.001);
+    createCannon("right", 740,0.001);
+    createCannon("right", 750,0.001);
+    createCannon("right", 760,0.001);
+    createCannon("right", 770,0.001);
+    createCannon("right", 780,0.001);
+    createCannon("right", 790,0.001);
+    createCannon("right", 800,0.001);
+    createCannon("left", 700,0.001);
+    createCannon("left", 710,0.001);
+    createCannon("left", 720,0.001);
+    createCannon("left", 730,0.001);
+    createCannon("left", 740,0.001);
+    createCannon("left", 750,0.001);
+    createCannon("left", 760,0.001);
+    createCannon("left", 770,0.001);
+    createCannon("left", 780,0.001);
+    createCannon("left", 790,0.001);
+    createCannon("left", 800,0.001);
+    
 
 
     
