@@ -97,4 +97,7 @@ var collectableList = {
   kennedi: { image: "images/collectables/kennedi-head.png" },
   max: { image: "images/collectables/max-head.png" },
   steve: { image: "images/collectables/steve-head.png" },
+  troll1: { image: "images/troll1.png" },
+  troll2: { image: "images/troll2.png" },
+  troll3: { image: "images/troll 3.png" },
 };
