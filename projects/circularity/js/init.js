@@ -44,7 +44,7 @@ var circles = []; // variable to store all circles in one Array
         */
 
         for (var i = 0; i < 100; i++) {
-            drawCircle();
+            drawCircle(); // draws 100 circles
         }
 
         ////////////////////////////////////////////////////////////
@@ -74,7 +74,7 @@ var circles = []; // variable to store all circles in one Array
             */
 
            for (var i = 0; i <circles.length; i++) {
-            physikz.updatePosition(circles[i]);
+            physikz.updatePosition(circles[i]);         // For all the balls in the array circles, their position is checked, and brought back if it out of the screen borders
             game.checkCirclePosition(circles[i]);
            }
             
