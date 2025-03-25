@@ -91,19 +91,17 @@ var background = function (window) {
             tree.x -= 3; // moves the tree to the left by subtracting 3 from its current x pos
             tree.x = tree.x + 1;
 
-            if (tree.x < -200) {
+            if (tree.x < -700) {
             tree.x = canvasWidth;
             }
 
 
             // TODO 4: Part 2 - Parallax
             for (var i = 0; i < buildings.length; i++) {
-                var building = buildings[i];
-              
-                building.x -= 3;
-                
-                if (building.x < -200) {
-                    building.x = canvasWidth;
+                var building = buildings[i]; // the individual index of the buildings array stored in variable building
+                building.x -= 1; // subtracts 1 from the building's x pos; animate to the left
+                if (building.x < -200) { //checks if the x pos of the building is less than -200
+                    building.x = canvasWidth; // if true, resets buildings x to the right side of the canvas
                     }
               }
 
