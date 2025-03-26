@@ -40,7 +40,7 @@ var background = function (window) {
             // TODO 1:
             // this currently fills the background with an obnoxious yellow;
             // you should modify both the height and color to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'blue'); // draws a rectangle and stores it in the variable backgroundFill
+            var backgroundFill = draw.rect(canvasWidth,groundY,'blue'); // draws a rectangle and stores it in the variable backgroundFill
             background.addChild(backgroundFill); // adds backgroundFill to the brackground
             
             // TODO 2: - Add a moon and starfield
@@ -64,7 +64,7 @@ var background = function (window) {
                 var buildingColors = ["purple", "yellow", "orange", "pink", "black"];
                 var buildingHeight = 300 * Math.random(); // assign 300 to the buildingHeight variable
                 var building = draw.rect(75, buildingHeight, buildingColors[i], "Black", 1); // draws rectangle with 75 , buildHeight is height, lightgrey is the color, black is the outline, and 1 is the outline width
-                building.x = 200 * i; // multiply 200 by current i value and store it as the x pos for the building
+                building.x = 700 * i; // multiply 200 by current i value and store it as the x pos for the building
                 building.y = groundY - buildingHeight; // take the groundy, subtacts the building height
                 background.addChild(building); // add building to background container
                 buildings.push(building); // add the building to the buildings array for further manipulation
@@ -73,7 +73,7 @@ var background = function (window) {
             // TODO 3: Part 1 - Add a tree
             tree = draw.bitmap("img/tree.png"); // creates a bitmap for the tree image and stores it in the variable tree
             tree.x = 300; // place the tree off-screen to the right
-            tree.y = 225; // place the tree above the ground (adjested for tree height)
+            tree.y = 250; // place the tree above the ground (adjested for tree height)
             background.addChild(tree); // adds to background
 
         } // end of render function - DO NOT DELETE
