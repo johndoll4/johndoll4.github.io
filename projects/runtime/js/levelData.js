@@ -27,7 +27,7 @@ var makeLevelData = function (window) {
           { type: "reward", x: 1100, y: groundY - 103, health : 15},
           { type: "reward", x: 1500, y: groundY - 103, health : 5},
 
-          { type: "level", x: 1900, y: groundY - 50, health : 100}
+          { type: "level", x: 2000, y: groundY - 50, health : 100}
         ],
       },
       {

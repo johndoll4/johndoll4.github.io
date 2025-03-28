@@ -30,7 +30,7 @@ var runLevels = function (window) {
     obstacleHitZone.addChild(obstacleImage); // attaches the miage to the obstacle hitzone
     obstacleImage.x = -25; // positions the image on the hitzone's x value by moving it left 25 pixels
     obstacleImage.y = -25; // positions the image on the hitzone's y value by moving it up 25 pixels
-    obstacleHitZone.rotationalVelocity = -100000;
+    obstacleHitZone.rotationalVelocity = -100000; // rotates the sawblades
     }
     /*
     createObstacles(400, groundY - 20, 25, 10);
