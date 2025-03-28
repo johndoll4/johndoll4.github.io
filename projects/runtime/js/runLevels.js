@@ -19,18 +19,20 @@ var runLevels = function (window) {
     // TODOs 5 through 11 go here
     // BEGIN EDITING YOUR CODE HERE
 
-    function createObstacles (x, y, hitSize, damage) {
+    function createObstacles (x, y, hitSize, damage, image) {
     var hitZoneSize = hitSize; // define the size of the hitzoone and assign to a variable
     var damageFromObstacle = damage; // defines the amount of damage an obstacle causes and assigns to variable
     var obstacleHitZone = game.createObstacle(hitZoneSize, damageFromObstacle); // creates the obstacle hitzone using size and damage as parameters
     obstacleHitZone.x = x; // sets the x coordinate of the obstacle
     obstacleHitZone.y = y; // sets the y coordinate of the obstacle
     game.addGameItem(obstacleHitZone); // adds the obstacle hitzone to the game
-    var obstacleImage = draw.bitmap("img/sawblade.png"); // draw the image bitmap and store it in a variable
+    var obstacleImage = draw.bitmap(image); // draw the image bitmap and store it in a variable
     obstacleHitZone.addChild(obstacleImage); // attaches the miage to the obstacle hitzone
     obstacleImage.x = -25; // positions the image on the hitzone's x value by moving it left 25 pixels
     obstacleImage.y = -25; // positions the image on the hitzone's y value by moving it up 25 pixels
     obstacleHitZone.rotationalVelocity = -100000; // rotates the sawblades
+    obstacleImage.scaleX = 1;
+    obstacleImage.scaleY = 1;
     }
     /*
     createObstacles(400, groundY - 20, 25, 10);
@@ -125,7 +127,7 @@ var runLevels = function (window) {
         var element = levelObjects[i];
 
         if (element.type === "sawblade") { // checks the type key:value of the gameItems object and manifests its value
-          createObstacles(element.x, element.y, element.hitsize, element.damage); // if the condition is true it will call the relevant function
+          createObstacles(element.x, element.y, element.hitsize, element.damage, element.image); // if the condition is true it will call the relevant function
         }
 
         if (element.type === "enemy") { // checks the type key:value of the gameItems object and manifests its value
