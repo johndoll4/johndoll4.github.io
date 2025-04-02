@@ -19,9 +19,9 @@ var makeLevelData = function (window) {
           { type: "sawblade", x: 900, y: groundY - 101, hitsize : 25, damage : 10, image: "img/battlebus.png", rotate : 0, offsetX : -75, offsetY : -60, scale : 0.5},
           { type: "sawblade", x: 1234, y: groundY - 10, hitsize : 25, damage : 10, image: "img/tumbleweed.png", rotate : -10, offsetX : -25, offsetY : -25, scale : 0.15},
           
-          { type: "enemy", x: 500, y: groundY - 50, damage : 50},
-          { type: "enemy", x: 900, y: groundY - 50, damage : 15},
-          { type: "enemy", x: 1200, y: groundY - 50, damage : 5},
+          { type: "enemy", x: 500, y: ground - 50, damage : 50, type : "img/memeboi.png"},
+          { type: "enemy", x: 900, y: groundY - 50, damage : 15, type : "img/jonesy.png"},
+          { type: "enemy", x: 1200, y: groundY - 50, damage : 5, type : "img/aura.png"},
 
           { type: "reward", x: 700, y: groundY - 103, health : 50},
           { type: "reward", x: 1100, y: groundY - 103, health : 15},

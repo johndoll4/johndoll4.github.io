@@ -41,7 +41,7 @@ var runLevels = function (window) {
     */
   function createEnemy(x, y, damage, type) {
     var enemy = game.createGameItem("enemy", 25); // creates enemy game item and adds it to game and stores it in the variable enemy
-    var redSquare = draw.rect(50, 50, "red"); // creates a red square and stores it in the variable red square
+    var redSquare = draw.bitmap(type); // creates a red square and stores it in the variable red square
     redSquare.x = -25; // offsets the image from the hitzone by -25 pixels
     redSquare.y = -25; // offsets the image from the hitzone by -25 pixels
     enemy.addChild(redSquare); //add the red square as a child to our enemy variable
@@ -49,7 +49,7 @@ var runLevels = function (window) {
     enemy.y = y; // y pos of enemy
     game.addGameItem(enemy); // adds enemy to game
     enemy.velocityX -= 3; // makes the enemy move
-    enemy.rotationalVelocity = 1; // rotates enemy
+    // enemy.rotationalVelocity = 1; // rotates enemy
     
     enemy.onPlayerCollision = function () {
       game.changeIntegrity(-damage) // subtract 10 health from hallebots HUD
@@ -131,7 +131,7 @@ var runLevels = function (window) {
         }
 
         if (element.type === "enemy") { // checks the type key:value of the gameItems object and manifests its value
-          createEnemy(element.x, element.y, element.damage); // if the condition is true it will call the relevant function
+          createEnemy(element.x, element.y, element.damage, element.type); // if the condition is true it will call the relevant function
         }
         
         if (element.type === "reward") { // checks the type key:value of the gameItems object and manifests its value
