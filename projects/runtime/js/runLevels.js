@@ -31,25 +31,27 @@ var runLevels = function (window) {
     obstacleImage.x = offsetX; // positions the image on the hitzone's x value by moving it left 25 pixels
     obstacleImage.y = offsetY; // positions the image on the hitzone's y value by moving it up 25 pixels
     obstacleHitZone.rotationalVelocity = rotate; // rotates the sawblades
-    obstacleImage.scaleX = scale;
-    obstacleImage.scaleY = scale;
+    obstacleImage.scaleX = scale; // scales obstacle X 
+    obstacleImage.scaleY = scale; // scales obstacle Y
     }
     /*
     createObstacles(400, groundY - 20, 25, 10);
     createObstacles(900, groundY - 101, 25, 10);
     createObstacles(1234, groundY - 10, 25, 10);
     */
-  function createEnemy(x, y, damage, type) {
+  function createEnemy(x, y, damage, image, scale, offsetX, offsetY) {
     var enemy = game.createGameItem("enemy", 25); // creates enemy game item and adds it to game and stores it in the variable enemy
-    var redSquare = draw.bitmap(type); // creates a red square and stores it in the variable red square
-    redSquare.x = -25; // offsets the image from the hitzone by -25 pixels
-    redSquare.y = -25; // offsets the image from the hitzone by -25 pixels
+    var redSquare = draw.bitmap(image); // creates a red square and stores it in the variable red square
+    redSquare.x = -offsetX; // offsets the image from the hitzone by -25 pixels
+    redSquare.y = -offsetY; // offsets the image from the hitzone by -25 pixels
     enemy.addChild(redSquare); //add the red square as a child to our enemy variable
     enemy.x = x; // x pos of enemy
     enemy.y = y; // y pos of enemy
     game.addGameItem(enemy); // adds enemy to game
     enemy.velocityX -= 3; // makes the enemy move
     // enemy.rotationalVelocity = 1; // rotates enemy
+    redSquare.scaleX = scale; // scales enemy X
+    redSquare.scaleY = scale; // sclaes enemy Y
     
     enemy.onPlayerCollision = function () {
       game.changeIntegrity(-damage) // subtract 10 health from hallebots HUD
@@ -68,17 +70,19 @@ var runLevels = function (window) {
     createEnemy(1200, groundY-50, 5); // calls an enemy
     */
 
-    function createReward(x, y, health) {
+    function createReward(x, y, health, image, scale, X, Y) {
       var reward = game.createGameItem("reward", 25); // creates reward game item and adds it to game and stores it in the variable reward
-      var purpleSquare = draw.rect(50, 50, "purple"); // creates a red square and stores it in the variable red square
-      purpleSquare.x = -25; // offsets the image from the hitzone by -25 pixels
-      purpleSquare.y = -25; // offsets the image from the hitzone by -25 pixels
+      var purpleSquare = draw.bitmap(image); // creates a red square and stores it in the variable red square
+      purpleSquare.x = -X; // offsets the image from the hitzone by -25 pixels
+      purpleSquare.y = -Y; // offsets the image from the hitzone by -25 pixels
       reward.addChild(purpleSquare); //add the red square as a child to our reward variable
       reward.x = x; // x pos of reward
       reward.y = y; // y pos of reward
       game.addGameItem(reward); // adds reward to game  
       reward.velocityX -= 3; // makes the reward move
       reward.rotationalVelocity = 1; // rotates reward
+      purpleSquare.scaleX = scale; // scales enemy X
+      purpleSquare.scaleY = scale; // sclaes enemy Y
       
       reward.onPlayerCollision = function () {
         game.changeIntegrity(health) // adds a certain amount of health to hallebots HUD
@@ -131,7 +135,7 @@ var runLevels = function (window) {
         }
 
         if (element.type === "enemy") { // checks the type key:value of the gameItems object and manifests its value
-          createEnemy(element.x, element.y, element.damage, element.type); // if the condition is true it will call the relevant function
+          createEnemy(element.x, element.y, element.damage, element.image, element.scale, element.offsetX, element.offsetY); // if the condition is true it will call the relevant function
         }
         
         if (element.type === "reward") { // checks the type key:value of the gameItems object and manifests its value
