@@ -95,17 +95,19 @@ var runLevels = function (window) {
     createReward(1500, groundY-103, 5); // calls a reward
     */
 
-    function createLevel(x, y, health) {
+    function createLevel(x, y, health, image) {
       var level = game.createGameItem("level", 25); // creates level game item and adds it to game and stores it in the variable level
-      var yellowSquare = draw.rect(50, 50, "yellow"); // creates a red square and stores it in the variable red square
-      yellowSquare.x = -25; // offsets the image from the hitzone by -25 pixels
-      yellowSquare.y = -25; // offsets the image from the hitzone by -25 pixels
+      var yellowSquare = draw.bitmap(image); // creates a red square and stores it in the variable red square
+      yellowSquare.x = -30; // offsets the image from the hitzone by -25 pixels
+      yellowSquare.y = -30; // offsets the image from the hitzone by -25 pixels
       level.addChild(yellowSquare); //add the red square as a child to our level variable
       level.x = x; // x pos of level
       level.y = y; // y pos of level
       game.addGameItem(level); // adds level to game  
       level.velocityX -= 3; // makes the level move
-      level.rotationalVelocity = 1; // rotates level
+      // level.rotationalVelocity = 1; // rotates level
+      yellowSquare.scaleX = 0.25; // scales level X
+      yellowSquare.scaleY = 0.25; // sclaes level Y
       
       level.onPlayerCollision = function () {
         game.changeIntegrity(health) // adds a certain amount of health to hallebots HUD
@@ -143,7 +145,7 @@ var runLevels = function (window) {
         }
         
         if (element.type === "level") { // checks the type key:value of the gameItems object and manifests its value
-          createLevel(element.x, element.y, element.health); // if the condition is true it will call the relevant function
+          createLevel(element.x, element.y, element.health, element.image); // if the condition is true it will call the relevant function
         }
       }
 
