@@ -141,7 +141,7 @@ var runLevels = function (window) {
         }
         
         if (element.type === "reward") { // checks the type key:value of the gameItems object and manifests its value
-          createReward(element.x, element.y, element.health); // if the condition is true it will call the relevant function
+          createReward(element.x, element.y, element.health, element.image, element.scale, element.X, element.Y); // if the condition is true it will call the relevant function
         }
         
         if (element.type === "level") { // checks the type key:value of the gameItems object and manifests its value
