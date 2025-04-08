@@ -70,11 +70,11 @@ var runLevels = function (window) {
     createEnemy(1200, groundY-50, 5); // calls an enemy
     */
 
-    function createReward(x, y, health, image, scale, X, Y) {
+    function createReward(x, y, health, image, scale, offsetX, offsetY) {
       var reward = game.createGameItem("reward", 25); // creates reward game item and adds it to game and stores it in the variable reward
       var purpleSquare = draw.bitmap(image); // creates a red square and stores it in the variable red square
-      purpleSquare.x = -X; // offsets the image from the hitzone by -25 pixels
-      purpleSquare.y = -Y; // offsets the image from the hitzone by -25 pixels
+      purpleSquare.x = offsetX; // offsets the image from the hitzone by -25 pixels
+      purpleSquare.y = offsetY; // offsets the image from the hitzone by -25 pixels
       reward.addChild(purpleSquare); //add the red square as a child to our reward variable
       reward.x = x; // x pos of reward
       reward.y = y; // y pos of reward
@@ -141,7 +141,7 @@ var runLevels = function (window) {
         }
         
         if (element.type === "reward") { // checks the type key:value of the gameItems object and manifests its value
-          createReward(element.x, element.y, element.health, element.image, element.scale, element.X, element.Y); // if the condition is true it will call the relevant function
+          createReward(element.x, element.y, element.health, element.image, element.scale, element.offsetX, element.offsetY); // if the condition is true it will call the relevant function
         }
         
         if (element.type === "level") { // checks the type key:value of the gameItems object and manifests its value
