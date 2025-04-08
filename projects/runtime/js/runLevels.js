@@ -80,7 +80,7 @@ var runLevels = function (window) {
       reward.y = y; // y pos of reward
       game.addGameItem(reward); // adds reward to game  
       reward.velocityX -= 3; // makes the reward move
-      reward.rotationalVelocity = 1; // rotates reward
+      // reward.rotationalVelocity = 1; // rotates reward
       purpleSquare.scaleX = scale; // scales enemy X
       purpleSquare.scaleY = scale; // sclaes enemy Y
       

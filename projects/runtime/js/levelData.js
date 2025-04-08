@@ -24,8 +24,8 @@ var makeLevelData = function (window) {
           { type: "enemy", x: 1200, y: groundY - 50, damage : 5, image : "img/aura.png", scale : 0.25, offsetX : 32, offsetY : 35},
 
           { type: "reward", x: 700, y: groundY - 103, health : 50, image : "img/luhmedkit.png", scale : 0.25, offsetX : -25, offsetY : -25},
-          { type: "reward", x: 1100, y: groundY - 103, health : 15, image : "img/luhshield.png", scale : 0.35, offsetX : -25, offsetY : -25},
-          { type: "reward", x: 1500, y: groundY - 103, health : 5, image : "img/bandages.png", scale : 0.35, offsetX : -25, offsetY : -25},
+          { type: "reward", x: 1100, y: groundY - 103, health : 15, image : "img/luhshield.png", scale : 0.35, offsetX : -35, offsetY : -25},
+          { type: "reward", x: 1500, y: groundY - 103, health : 5, image : "img/bandages.png", scale : 0.35, offsetX : -32, offsetY : -25},
 
           { type: "level", x: 2000, y: groundY - 50, health : 100, image : "img/zeropoint.png"}
         ],
