@@ -129,7 +129,7 @@ var runLevels = function (window) {
       var level = levelData[currentLevel]; // fetches the currentLevel from the levelData array and stores it in var level
       var levelObjects = level.gameItems // retrieves the arrawy of gameItems and stores it in var levelObjects
 
-      for (var i = 0; levelObjects.length; i++) {
+      for (var i = 0; i < levelObjects.length; i++) {
         var element = levelObjects[i];
 
         if (element.type === "sawblade") { // checks the type key:value of the gameItems object and manifests its value
